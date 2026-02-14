@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://camjcd47vitcd"]
+
+[ext_resource type="Texture2D" uid="uid://pnpxdhifplmf" path="res://assets/dev/paladin.png" id="1_4anbu"]
+[ext_resource type="Script" uid="uid://cwtqr20yw2dja" path="res://src/player/player.gd" id="1_rxibo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxibo"]
+size = Vector2(35, 62)
+
+[node name="Player" type="CharacterBody2D" unique_id=608263860]
+script = ExtResource("1_rxibo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402535262]
+texture = ExtResource("1_4anbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2042507701]
+position = Vector2(-13.5, 0)
+shape = SubResource("RectangleShape2D_rxibo")
