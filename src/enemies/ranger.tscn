@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b8fbj40byjxon"]
+
+[ext_resource type="Texture2D" uid="uid://dj80ad2ohjbc3" path="res://assets/dev/ranger.png" id="1_6y1a6"]
+[ext_resource type="Script" uid="uid://bh62wdts5230y" path="res://src/enemies/ranger.gd" id="1_dv2gm"]
+[ext_resource type="Script" uid="uid://d1ulnjoes6wsa" path="res://src/helpers/hurtbox.gd" id="2_wdtk1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wdtk1"]
+radius = 23.021729
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dv2gm"]
+radius = 24.083189
+
+[node name="Ranger" type="CharacterBody2D" unique_id=430906891]
+script = ExtResource("1_dv2gm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1380371632]
+texture = ExtResource("1_6y1a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1162679283]
+shape = SubResource("CircleShape2D_wdtk1")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=283415509]
+script = ExtResource("2_wdtk1")
+metadata/_custom_type_script = "uid://d1ulnjoes6wsa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1861379729]
+shape = SubResource("CircleShape2D_dv2gm")
+debug_color = Color(0.8794902, 0.12284643, 0.76991457, 0.41960785)

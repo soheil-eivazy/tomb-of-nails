@@ -8,6 +8,9 @@ size = Vector2(35, 62)
 
 [node name="Player" type="CharacterBody2D" unique_id=608263860]
 script = ExtResource("1_rxibo")
+backstep_speed = null
+speed = null
+turn_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402535262]
 texture = ExtResource("1_4anbu")

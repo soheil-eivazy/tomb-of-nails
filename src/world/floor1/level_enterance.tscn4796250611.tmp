@@ -27,6 +27,9 @@ tile_set = SubResource("TileSet_tnk21")
 [node name="Player" parent="." unique_id=608263860 instance=ExtResource("3_drnmm")]
 position = Vector2(635, 712)
 rotation = -1.6371188
+backstep_speed = 100
+speed = 200
+turn_speed = 5.0
 
 [node name="Slasher" parent="." unique_id=202718639 instance=ExtResource("4_mnhtf")]
 position = Vector2(316, 314)

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bcxicm6xw2rjv"]
+
+[ext_resource type="Script" uid="uid://dq8m5r1vq2yy8" path="res://src/enemies/slasher.gd" id="1_4svlb"]
+[ext_resource type="Texture2D" uid="uid://cgqsn1n1654gm" path="res://assets/dev/slasher.png" id="1_od8jq"]
+[ext_resource type="Script" uid="uid://d1ulnjoes6wsa" path="res://src/helpers/hurtbox.gd" id="2_ny260"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny260"]
+radius = 23.086792
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4svlb"]
+radius = 23.194826
+
+[node name="Slasher" type="CharacterBody2D" unique_id=202718639]
+script = ExtResource("1_4svlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971587862]
+texture = ExtResource("1_od8jq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531397920]
+shape = SubResource("CircleShape2D_ny260")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1121670931]
+script = ExtResource("2_ny260")
+metadata/_custom_type_script = "uid://d1ulnjoes6wsa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1597547725]
+shape = SubResource("CircleShape2D_4svlb")
+debug_color = Color(0.95736223, 0.06603049, 0.49629128, 0.41960785)
