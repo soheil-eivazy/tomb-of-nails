@@ -4,10 +4,11 @@ extends CharacterBody2D
 @export var speed: int = 200
 @export var turn_speed: float = 5.0
 
-@export var stat: PlayerStat
+@export var stat: ProtagStat
 
 var slash_scene: PackedScene = preload("uid://cbj5q7xv80qbw")
 var blood_bolt_scene: PackedScene = preload("uid://c7sscbio1fa62")
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 var attacks: Dictionary = {
 	"slash": slash_creator,
@@ -17,6 +18,9 @@ var attacks: Dictionary = {
 var chosen_attack: String = "slash"
 
 var dir: Vector2 = Vector2.UP
+
+func _ready():
+	hurtbox.hurt.connect(_on_hurt)
 
 func _physics_process(delta: float) -> void:
 	

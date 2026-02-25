@@ -1,6 +1,6 @@
 class_name Attack extends Area2D
 
-func _on_ready():
+func _ready():
 	body_entered.connect(_on_body_entered)
 
 

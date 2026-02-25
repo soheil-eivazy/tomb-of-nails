@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://camjcd47vitcd"]
+
+[ext_resource type="Texture2D" uid="uid://pnpxdhifplmf" path="res://assets/dev/paladin.png" id="1_4anbu"]
+[ext_resource type="Script" uid="uid://cwtqr20yw2dja" path="res://src/protag/protag.gd" id="1_rxibo"]
+[ext_resource type="Script" uid="uid://jdt1drlaeqak" path="res://src/protag/protag_stats.gd" id="2_kvtlx"]
+[ext_resource type="Script" uid="uid://d1ulnjoes6wsa" path="res://src/helpers/hurtbox.gd" id="3_dopwr"]
+
+[sub_resource type="Resource" id="Resource_3fqhc"]
+script = ExtResource("2_kvtlx")
+metadata/_custom_type_script = "uid://jdt1drlaeqak"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxibo"]
+size = Vector2(35, 62)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvtlx"]
+radius = 28.01785
+
+[node name="Protag" type="CharacterBody2D" unique_id=608263860]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_rxibo")
+stat = SubResource("Resource_3fqhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402535262]
+texture = ExtResource("1_4anbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2042507701]
+position = Vector2(-13.5, 0)
+shape = SubResource("RectangleShape2D_rxibo")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1315608083]
+collision_layer = 32
+collision_mask = 64
+script = ExtResource("3_dopwr")
+metadata/_custom_type_script = "uid://d1ulnjoes6wsa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1883727801]
+position = Vector2(-5, 0)
+shape = SubResource("CircleShape2D_kvtlx")
+debug_color = Color(0.8098631, 0.41274306, 0, 0.41960785)

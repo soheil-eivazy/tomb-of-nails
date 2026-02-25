@@ -12,11 +12,13 @@ size = Vector2(44.00009, 50.000015)
 
 [node name="BloodBolt" type="Area2D" unique_id=1395908798]
 rotation = 1.5708
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_x755r")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1894565201]
-collision_layer = 2
-collision_mask = 13
+collision_layer = 80
+collision_mask = 160
 script = ExtResource("2_ao423")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1103252001]

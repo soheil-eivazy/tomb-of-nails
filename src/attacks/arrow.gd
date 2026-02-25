@@ -3,6 +3,10 @@ extends Attack
 @export var speed: int = 600 
 var direction: Vector2
 var damage: int = 1
+@onready var hitbox: Hitbox = $Hitbox
+
+func _ready():
+	hitbox.hit.connect(_on_hit)
 
 func fire(g_pos: Vector2, dir: Vector2):
 	direction = dir

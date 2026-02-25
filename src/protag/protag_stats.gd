@@ -1,4 +1,4 @@
-class_name PlayerStat extends Resource
+class_name ProtagStat extends Resource
 
 
 @export var health: int = 10

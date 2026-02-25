@@ -11,11 +11,13 @@ size = Vector2(117, 41)
 size = Vector2(111, 34)
 
 [node name="Slash" type="Area2D" unique_id=901310337]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_mef40")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1204022612]
-collision_layer = 2
-collision_mask = 15
+collision_layer = 80
+collision_mask = 160
 script = ExtResource("2_7rco7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=305114885]

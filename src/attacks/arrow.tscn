@@ -11,6 +11,8 @@ size = Vector2(27, 3)
 size = Vector2(24, 3)
 
 [node name="Arrow" type="Area2D" unique_id=485003692]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_0ia25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=813975918]
@@ -19,8 +21,8 @@ shape = SubResource("RectangleShape2D_0ia25")
 debug_color = Color(0.9316703, 2.7627051e-05, 0.6538626, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2116146415]
-collision_layer = 2
-collision_mask = 15
+collision_layer = 80
+collision_mask = 160
 script = ExtResource("2_ws6j1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=798691600]

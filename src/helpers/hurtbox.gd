@@ -8,8 +8,8 @@ func _ready() -> void:
 	
 func _on_area_entered(body: Area2D):
 	#print(body)
-	pass
 	#hurt.emit(body)
+	pass
 
 func damage(value: int): 
 	print("hurt")

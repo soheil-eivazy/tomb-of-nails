@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 var slash_scene: PackedScene = preload("uid://cbj5q7xv80qbw")
 @export var stat: EnemyStat
+@onready var hurtbox: Hurtbox = $Hurtbox
+
+func _ready():
+	hurtbox.hurt.connect(_on_hurt)
 
 func _physics_process(delta: float) -> void:
 	#if randi() % 10 == 0:
