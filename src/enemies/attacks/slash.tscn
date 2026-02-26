@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cbj5q7xv80qbw"]
+
+[ext_resource type="Script" uid="uid://d1tf260n5qoy2" path="res://src/enemies/attacks/slash.gd" id="1_mef40"]
+[ext_resource type="Script" uid="uid://dx7y0p1w1onfa" path="res://src/helpers/hitbox.gd" id="2_7rco7"]
+[ext_resource type="Texture2D" uid="uid://h811jmbu0fdi" path="res://assets/dev/sword_hit.png" id="3_pfb7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ebec"]
+size = Vector2(117, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mef40"]
+size = Vector2(111, 34)
+
+[node name="Slash" type="Area2D" unique_id=901310337]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_mef40")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1204022612]
+collision_layer = 80
+collision_mask = 160
+script = ExtResource("2_7rco7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=305114885]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_3ebec")
+
+[node name="Timer" type="Timer" parent="." unique_id=1113995370]
+wait_time = 0.505
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837171095]
+texture = ExtResource("3_pfb7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=474120961]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_mef40")
+debug_color = Color(0.8572901, 0.11752748, 0.83662564, 0.41960785)
+
+[connection signal="hit" from="Hitbox" to="." method="_on_hit"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

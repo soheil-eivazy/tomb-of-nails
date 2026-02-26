@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bf1hwlky6d7ug"]
+
+[ext_resource type="Script" uid="uid://vq2cbv15wpsj" path="res://src/enemies/attacks/arrow.gd" id="1_n6wmk"]
+[ext_resource type="Script" uid="uid://dx7y0p1w1onfa" path="res://src/helpers/hitbox.gd" id="2_e884i"]
+[ext_resource type="Texture2D" uid="uid://b5xvw6jdfgvj5" path="res://assets/dev/arrow.png" id="3_uhxac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ia25"]
+size = Vector2(27, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfefi"]
+size = Vector2(24, 3)
+
+[node name="Arrow" type="Area2D" unique_id=485003692]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_n6wmk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=813975918]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_0ia25")
+debug_color = Color(0.9316703, 2.7627051e-05, 0.6538626, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2116146415]
+collision_layer = 16
+collision_mask = 128
+script = ExtResource("2_e884i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=798691600]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_dfefi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1130056717]
+texture = ExtResource("3_uhxac")

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cwtqr20yw2dja" path="res://src/protag/protag.gd" id="1_rxibo"]
 [ext_resource type="Script" uid="uid://jdt1drlaeqak" path="res://src/protag/protag_stats.gd" id="2_kvtlx"]
 [ext_resource type="Script" uid="uid://d1ulnjoes6wsa" path="res://src/helpers/hurtbox.gd" id="3_dopwr"]
+[ext_resource type="Script" uid="uid://cggeixmgjhxd3" path="res://src/helpers/interactor.gd" id="5_3fqhc"]
 
 [sub_resource type="Resource" id="Resource_3fqhc"]
 script = ExtResource("2_kvtlx")
@@ -14,6 +15,9 @@ size = Vector2(35, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvtlx"]
 radius = 28.01785
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuo3x"]
+size = Vector2(30, 60)
 
 [node name="Protag" type="CharacterBody2D" unique_id=608263860]
 collision_layer = 4
@@ -38,3 +42,14 @@ metadata/_custom_type_script = "uid://d1ulnjoes6wsa"
 position = Vector2(-5, 0)
 shape = SubResource("CircleShape2D_kvtlx")
 debug_color = Color(0.8098631, 0.41274306, 0, 0.41960785)
+
+[node name="Interactor" type="Area2D" parent="." unique_id=831037141]
+collision_layer = 256
+collision_mask = 512
+script = ExtResource("5_3fqhc")
+metadata/_custom_type_script = "uid://cggeixmgjhxd3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor" unique_id=1114029808]
+position = Vector2(26, 0)
+shape = SubResource("RectangleShape2D_tuo3x")
+debug_color = Color(0.6393925, 0.52504164, 0.048459984, 0.41960785)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7sscbio1fa62"]
 
 [ext_resource type="Texture2D" uid="uid://ouchoj47tfs1" path="res://assets/dev/blood_bolt.png" id="1_jib88"]
-[ext_resource type="Script" uid="uid://cqq2dm73yhoeu" path="res://src/attacks/blood_bolt.gd" id="1_x755r"]
+[ext_resource type="Script" uid="uid://cqq2dm73yhoeu" path="res://src/protag/attacks/blood_bolt.gd" id="1_x755r"]
 [ext_resource type="Script" uid="uid://dx7y0p1w1onfa" path="res://src/helpers/hitbox.gd" id="2_ao423"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gnla"]

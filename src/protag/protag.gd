@@ -9,6 +9,7 @@ extends CharacterBody2D
 var slash_scene: PackedScene = preload("uid://cbj5q7xv80qbw")
 var blood_bolt_scene: PackedScene = preload("uid://c7sscbio1fa62")
 @onready var hurtbox: Hurtbox = $Hurtbox
+@onready var interactor: Interactor = $Interactor
 
 var attacks: Dictionary = {
 	"slash": slash_creator,
@@ -21,8 +22,22 @@ var dir: Vector2 = Vector2.UP
 
 func _ready():
 	hurtbox.hurt.connect(_on_hurt)
+	#interactor.in_proximitee.connect(_in_proximity_of)
+	#interactor.exit_proximitee.connect(_on_exit_proximity)
+
+
+#func _in_proximity_of(item: Interactee):
+	#interactee = item
+#
+#func _on_exit_proximity():
+	#interactee = null
 
 func _physics_process(delta: float) -> void:
+	
+	# TODO: how can we handle this?
+	#if interactee != null:
+		#if abs(interactee.global_position - global_position) >= Vector2(100, 100):
+			#interactee = null
 	
 	#var state = Machine.get_state()
 	#var dir = (get_global_mouse_position() - position).normalized()
@@ -61,7 +76,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ACT_SLASH"):
 		chosen_attack = "slash"
 
-
+	if Input.is_action_just_pressed("INTERACTION"):
+		interactor.interact()
+		#print(interactee)
+		#if interactee != null:
+			#interactee.interact()
 
 
 

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://camjcd47vitcd" path="res://src/protag/protag.tscn" id="3_drnmm"]
 [ext_resource type="PackedScene" uid="uid://bcxicm6xw2rjv" path="res://src/enemies/slasher.tscn" id="4_mnhtf"]
 [ext_resource type="PackedScene" uid="uid://b8fbj40byjxon" path="res://src/enemies/ranger.tscn" id="5_3xcog"]
+[ext_resource type="PackedScene" uid="uid://ducvsim6jbm2x" path="res://src/world/items/chest.tscn" id="6_3xcog"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drnmm"]
 texture = ExtResource("2_s7ib8")
@@ -34,3 +35,6 @@ position = Vector2(883, 288)
 position = Vector2(617, 462)
 
 [node name="Camera2D" type="Camera2D" parent="Protag" unique_id=1437147874]
+
+[node name="Chest" parent="." unique_id=663330778 instance=ExtResource("6_3xcog")]
+position = Vector2(238, 656)
